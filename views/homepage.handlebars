@@ -1,0 +1,44 @@
+<h1>Talkin' Tech Blog</h1>
+
+
+
+<!--Loop over each object in the blogpost array-->
+{{#each blogposts as |blogpost|}}
+  <div class="row mb-4 project" "blog-post">
+    <div class="col-md-5">
+    <h2>{{title}}</h2>
+     <p>{{content}}</p> 
+      <p>Created by {{user.name}}</p>
+    </div>
+</div>
+{{/each}}
+
+<div class="form-group" style="margin-bottom: 20px;">
+
+  <form>
+    <button
+      class="btn btn-danger"
+      type="submit"
+      formaction="/blogpost"
+      style="margin-top: 20px; font-size: 30px; align-items: center;"
+    >+ New Post</button>
+  </form>
+</div>
+
+
+
+<!--<h1>Talkin' Tech Blog</h1>
+
+THIS IS THE POST SUBMIT CODE
+ 
+<label for="bp-title-input">Post Title:</label><br>
+<input type="text" name="bp-title-input" id="bp-title-input"><br>
+<label for="bp-content-input">Post Content:</label><br>
+<textarea type="text" name="bp-content-input" id="bp-content-input" placeholder="Speak your mind here." style="width:700px; height:300px;"></textarea><br>
+
+<button id="blogpost-submit">Submit</button>
+
+ <script src="/js/blogpost-submit.js"></script>-->
+
+
+ 

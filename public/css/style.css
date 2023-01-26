@@ -1,0 +1,66 @@
+header, .project:not(:last-child) {
+  border-bottom: 1px solid #ccc;
+}
+
+.no-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: #1b89bc;
+  text-decoration: none;
+  font-size: 100%;
+}
+
+.no-button:hover {
+  color: #065b83;
+  text-decoration: underline;
+}
+
+.dollar-amount {
+  color: #056605;
+  font-weight: bold;
+  margin-left: -5px;
+}
+
+/* new for blogpost.handlebars file*/
+
+.blogs-section{
+    width: 100%;
+    padding: 50px 5vw;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 80px;
+}
+
+.blog-image{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.blog-overview{
+    margin: 10px 0 20px;
+    line-height: 30px;
+}
+
+.btn.dark{
+    background: #1b1b1b;
+    color: #fff;
+}
+
+/* added by me for blog content field -- not working, hard coded style in html */
+
+.bp-content-input{
+  width: 700px;
+  height: 300px;
+}
+
+.blog-post {
+  border: 2px solid #6DA483;
+  border-radius: 15px;
+  padding-left: 15px;
+  margin-top: 15px;
+}
