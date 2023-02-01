@@ -1,0 +1,17 @@
+[
+    {
+        "content": "You don't know nothin bout mySQL, you need some schoolin.",
+        "post_id": 1,
+        "user_id": 3
+    },
+    {
+        "content": "This is the Holy Grail, I learned so much from your post, Monty you are the master.",
+        "post_id": 2,
+        "user_id": 2
+    },
+    {
+        "content": "I find JS very difficult, after reading your post, I see you know nothing John Snow. ",
+        "post_id": 3,
+        "user_id": 1
+    }
+  ]

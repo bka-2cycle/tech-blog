@@ -1,0 +1,40 @@
+
+{{#each blogposts as |blogpost|}}
+  <div class="row mb-4 project blog-post">
+
+
+    <div class="col-md-5 card">
+
+    <a href='/postpreview/{{id}}'><h2>{{title}}</h2></a>
+
+     <p>{{content}}</p> 
+     
+      <p class="attribute">Created by: {{user.name}}</p>
+      <p>
+      <a href="/editpost/{{id}}"><button class="btn btn-sm">Edit</button></a></p>
+    </div>
+
+ 
+<divclass="col-md-5">
+  <h5>Comments:</h5>
+{{#each comments as | comment|}}
+<p class="col-md-5 card" id="comm-box">{{comment.content}}</p>
+
+{{/each}}
+</div>
+
+
+
+
+    <div>
+    <h4>Add a Comment:</h4>
+    <textarea id="comment"></textarea><br>
+    <a href="/postpreview/{{id}}"><button id="submit-comment" value={{id}} class="btn btn-sm">Submit</button></a>
+    
+</div>
+</div>
+
+
+{{/each}}
+
+<script src="/js/comment.js"></script>

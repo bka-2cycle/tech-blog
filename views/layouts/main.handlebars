@@ -5,30 +5,68 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tech-Blog</title>
+
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .imgbox {
+            display: grid;
+            height: 100%;
+        }
+        .center-fit {
+            max-width: 100%;
+            max-height: 100vh;
+            margin: auto;
+        }
+    </style>
+
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
+  <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200&display=swap" rel="stylesheet">
+ 
+<script>
+    $(function(){
+        $('a').each(function(){
+            if ($(this).prop('href') == window.location.href) {
+                $(this).addClass('active'); $(this).parents('li').addClass('active');
+            }
+        });
+    });
+</script>
+
 </head>
 
 <body>
+
+
+<div class="imgbox"><img class="center-fit" src="/images/blog-header.png"></div>
   <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-     
-      <nav>
-        <!-- Conditionally render login or logout links -->
-         <a href="/">Home</a>
 
-         <a href="/dashboard">Dashboard</a>
+<div class="topnav">
+  <a href="/">Home</a>
+  <a href="/dashboard">Dashboard</a>
+  {{#if logged_in}}
+  <a href="#" id="logout">Logout</a>
+  {{else}}
+  <a href="/login">Login</a>
+  {{/if}}
+  
+  <input type="text" placeholder="Search.." name="search">
+  
+
+</div>
 
 
-        {{#if logged_in}}
-        <!--<a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>-->
-        <a href="/logout">logout</a>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
-      </nav>
-    </header>
+
+
+
+
     <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->
       {{{ body }}}

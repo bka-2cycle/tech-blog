@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Blogpost } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+//CREATE A NEW POST__________________________________________
 router.post('/', async (req, res) => {
   try {
     console.log(req.body)
@@ -17,13 +18,27 @@ router.post('/', async (req, res) => {
     res.status(400).json(err);
   }
 });
+// /api/blogpost/:id perameter
+//EDIT AN EXISTING POST_________________________
+router.put("/:id", (req, res) => {
+  // update a post by its `id` value
+  Blogpost.update(req.body, {
+    where: {
+      id: req.params.id,
+    },
+  }).then(function (rowsUpdated) {
+    res.json(rowsUpdated);
+  });
+});
 
-/* router.delete('/:id', withAuth, async (req, res) => {
+
+//______________________________________________________________DELETE POST testing
+router.delete('/:id', withAuth, async (req, res) => {
+  console.log('your in delete')
   try {
     const blogpostData = await Blogpost.destroy({
       where: {
         id: req.params.id,
-        user_id: req.session.user_id,
       },
     });
     if (!blogpostData) {
@@ -35,7 +50,7 @@ router.post('/', async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
-}); */
+});
 
 
 
