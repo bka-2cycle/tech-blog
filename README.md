@@ -7,11 +7,11 @@ A blog web site where developers can publish their blog posts and comment on oth
 
 ## Installation
 
-There is no installation, URL access through the browser via: 
+There is no installation, URL access through the browser via: https://speakingincode.herokuapp.com/
 
 ## Usage
 
-Visit the site at:
+Visit the site at: https://speakingincode.herokuapp.com/
 
 The home page shows all blog posts.
 
