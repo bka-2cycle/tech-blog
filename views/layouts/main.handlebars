@@ -26,7 +26,7 @@
 
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
-  <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+  
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -68,8 +68,9 @@
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
+  <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
   <script>
-    $(function () {
+    $(document).ready(function () {
       $('a').each(function () {
         if ($(this).prop('href') == window.location.href) {
           $(this).addClass('active'); $(this).parents('li').addClass('active');
