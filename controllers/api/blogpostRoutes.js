@@ -1,16 +1,16 @@
-const router = require('express').Router();
-const { Blogpost } = require('../../models');
-const withAuth = require('../../utils/auth');
+const router = require("express").Router();
+const { Blogpost } = require("../../models");
+const withAuth = require("../../utils/auth");
 
-//CREATE A NEW POST__________________________________________
-router.post('/', async (req, res) => {
+//CREATE A NEW POST
+router.post("/", async (req, res) => {
   try {
-    console.log(req.body)
+    console.log(req.body);
     const newBlogpost = await Blogpost.create({
       ...req.body,
       user_id: req.session.user_id,
       title: req.body.title,
-      content: req.body.content
+      content: req.body.content,
     });
 
     res.status(200).json(newBlogpost);
@@ -18,8 +18,8 @@ router.post('/', async (req, res) => {
     res.status(400).json(err);
   }
 });
-// /api/blogpost/:id perameter
-//EDIT AN EXISTING POST_________________________
+
+//EDIT AN EXISTING POST
 router.put("/:id", (req, res) => {
   // update a post by its `id` value
   Blogpost.update(req.body, {
@@ -31,10 +31,9 @@ router.put("/:id", (req, res) => {
   });
 });
 
-
-//______________________________________________________________DELETE POST testing
-router.delete('/:id', withAuth, async (req, res) => {
-  console.log('your in delete')
+//DELETE POST
+router.delete("/:id", withAuth, async (req, res) => {
+  console.log("your in delete");
   try {
     const blogpostData = await Blogpost.destroy({
       where: {
@@ -43,7 +42,7 @@ router.delete('/:id', withAuth, async (req, res) => {
       },
     });
     if (!blogpostData) {
-      res.status(404).json({ message: 'No post found with this id!' });
+      res.status(404).json({ message: "No post found with this id!" });
       return;
     }
 
@@ -52,7 +51,5 @@ router.delete('/:id', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-
 
 module.exports = router;

@@ -4,25 +4,22 @@
 {{#each blogposts as |blogpost|}}
   <div class="row mb-4 project blog-post">
 
-
     <div class="col-md-5 card">
 
-      <a href="/postpreview/{{id}}"><h2>{{title}}</h2></a>          
+      <a href="/postpreview/{{id}}"><h2>{{title}}</h2></a>
 
+      <p>{{content}}</p>
 
-      <p>{{content}}</p>           
-
-<p class="attribute">Created by: {{user.name}} on {{format_date blogpost.date_created}}</p>
+      <p class="attribute">Created by:
+        {{user.name}}
+        on
+        {{format_date blogpost.date_created}}</p>
       {{!-- <p class="attribute">Created by: {{user.name}}</p> --}}
     </div>
   </div>
 {{/each}}
 
 <div class="form-group" style="margin-bottom: 20px;">
-
-
-
-
 
   <form>
     <button class="btn btn-sm" type="submit" formaction="/blogpost">+ New Post</button>
