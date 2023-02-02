@@ -1,6 +1,6 @@
 {{#each blogposts as |blogpost|}}
   <div class="row mb-4 project" "blog-post">
-    <div id= "my-blog" data-id="{{id}}" class="col-md-5">
+    <div id="my-blog" data-id="{{id}}" class="col-md-5">
         <h3>Edit Post</h3>
     
     <textarea name="ep-title-input" id="ep-title-input" style="width:700px;">{{title}}</textarea><br><br>
@@ -8,7 +8,9 @@
       <p class="attribute">Created by: {{user.name}}</p>
     </div>
 </div>
-<a href="/dashboard"><button class="btnr btn-sm" id="post-delete red">Delete Post</button></a>
+
+{{!-- <a href="/dashboard"><button class="btnr btn-sm" id="post-delete red">Delete Post</button></a> --}}
+<a href="/dashboard"><button class="btn btn-sm" id="post-delete">Delete Post</button></a>
 <a href="/postpreview/{{id}}"><button class="btn btn-sm" id="ep-submit">Submit Changes</button></a>
 {{/each}}
 

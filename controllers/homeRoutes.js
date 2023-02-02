@@ -76,17 +76,24 @@ router.get("/postpreview/:id", withAuth, async (req, res) => {
     console.log(req.session.user_id);
     const blogpostData = await Blogpost.findAll({
       where: { id: req.params.id },
-      include: [User, Comments]
+      include: [{model: User}, {model: Comments, include:[User]}]
     });
     console.log(blogpostData);
     const blogposts = blogpostData.map((blog) => blog.get({ plain: true }));
     console.log(blogposts);
     
-   // res.json(blogposts);
-    
+   //res.json(blogposts);
+    console.log('req.session.user', req.session.user_id)
+    console.log('blogpost.user', blogposts[0].user.id)
+   
+   let isOwner = false
+   if(req.session.user_id === blogposts[0].user.id){
+   isOwner=true
+   }
+console.log(isOwner)
     res.render("postpreview", {blogposts,
       logged_in: req.session.logged_in,
-    
+    isOwner:isOwner
     });
 
   } catch (err) {

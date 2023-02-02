@@ -1,7 +1,7 @@
-<h1>Hello {{blogposts.[0].user.name}}, here are your posts:</h1>
+<h1>Hello {{blogposts.[0].user.name}} here are your posts:</h1>
 
 <!--Loop over each object in the blogpost array and find by user id-->
-{{#each blogposts}}
+{{#each blogposts as |blogpost|}}
   <div class="row mb-4 project" "blog-post">
 
     <div class="col-md-5 card">
@@ -10,7 +10,8 @@
 
      <p>{{content}}</p> 
 
-      <p class="attribute">Created by: {{user.name}}</p>
+      <p class="attribute">Created by: {{user.name}} on {{format_date blogpost.date_created}}</p>
+      {{!-- <p class="attribute">Created by: {{user.name}}</p> --}}
     </div>
 </div>
 {{/each}}

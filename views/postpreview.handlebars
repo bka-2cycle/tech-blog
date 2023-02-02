@@ -9,17 +9,27 @@
 
      <p>{{content}}</p> 
      
-      <p class="attribute">Created by: {{user.name}}</p>
+      <p class="attribute">Created by: {{user.name}} on {{format_date blogpost.date_created}}</p>
+      {{#if ../isOwner}}
+      
+      
+      
       <p>
       <a href="/editpost/{{id}}"><button class="btn btn-sm">Edit</button></a></p>
+
+      {{/if}}
     </div>
 
  
-<divclass="col-md-5">
+<div class="col-md-5">
   <h5>Comments:</h5>
+  
 {{#each comments as | comment|}}
-<p class="col-md-5 card" id="comm-box">{{comment.content}}</p>
+<div class="col-md-5 card" id="comm-box">
+<p>{{comment.content}}</p>
 
+<span id="comm-attr" style="font-size: 12px; margin-top: -20px;" class="attribute">Created by: {{comment.user.name}} on {{format_date comment.date_created}}</span>
+</div>
 {{/each}}
 </div>
 

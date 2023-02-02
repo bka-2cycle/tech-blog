@@ -68,3 +68,8 @@ background: -moz-linear-gradient(top, #EAE2B0 0%, #FDFFF8 100%);
 background: -webkit-linear-gradient(top, #EAE2B0 0%, #FDFFF8 100%);
 background: linear-gradient(to bottom, #EAE2B0 0%, #FDFFF8 100%);
   }
+
+  #comm-attr {
+    vertical-align: 50% !important;
+    margin-top: -10px;
+  }
